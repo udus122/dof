@@ -6,6 +6,9 @@ from django.utils import timezone
 from django.db import models
 
 
+from uuid import uuid4
+
+
 class CustomUserManager(UserManager):
     """Define a model manager for User model with username field"""
 
@@ -40,11 +43,13 @@ class CustomUserManager(UserManager):
         return self._create_user(email, password, **extra_fields)
 
 
-class CustomUser(AbstractUser, PermissionsMixin):
+class CustomUser(AbstractBaseUser, PermissionsMixin):
     """拡張ユーザーモデル"""
+
+    uuid = models.UUIDField(default=uuid4, primary_key=True, editable=False)
     email = models.EmailField(_('email address'), unique=True)
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
-    last_name = models.CharField(_('last name'), max_length=150, blank)
+    last_name = models.CharField(_('last name'), max_length=150, blank=True)
 
     is_staff = models.BooleanField(
         _('is staff'),
