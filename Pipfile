@@ -8,6 +8,11 @@ flake8 = "*"
 
 [packages]
 django = "*"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+localserver = "python3 manage.py runserver 0.0.0.0:8000 --settigns config.local_settings"
+
