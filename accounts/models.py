@@ -69,7 +69,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELD = []
 
-    class Meta(AbstractUser.Meta):
+    class Meta:
         verbose_name = _('user')
         verbose_name_plural = _('users')
 
@@ -89,4 +89,4 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         username属性のゲッター
         他のアプリケーションが、username属性にアクセスしたバアに備えて定義メールアドレスを返す
         """
-    return self.email
+        return self.email

@@ -2,22 +2,22 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.utils.translation import ugettext as _
-from .models import User
+from .models import CustomUser
 
 
-class MyUserChangeForm(UserChangeForm):
+class CustomUserChangeForm(UserChangeForm):
     class Meta:
-        model = User
+        model = CustomUser
         fields = '__all__'
 
 
-class MyUserCreationForm(UserCreationForm):
+class CustomUserCreationForm(UserCreationForm):
     class Meta:
-        model = User
+        model = CustomUser
         fields = ('email',)
 
 
-class MyUserAdmin(UserAdmin):
+class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name')}),
@@ -30,12 +30,12 @@ class MyUserAdmin(UserAdmin):
             'fields': ('email', 'password1', 'password2'),
         }),
     )
-    form = MyUserChangeForm
-    add_form = MyUserCreationForm
+    form = CustomUserChangeForm
+    add_form = CustomUserCreationForm
     list_display = ('email', 'first_name', 'last_name', 'is_staff')
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
     search_fields = ('email', 'first_name', 'last_name')
-    ordering = ('email')
+    ordering = ('email',)
 
 
-admin.site.register(User, MyUserAdmin)
+admin.site.register(CustomUser, CustomUserAdmin)
