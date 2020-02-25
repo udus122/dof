@@ -46,10 +46,25 @@ class CustomUserManager(UserManager):
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     """拡張ユーザーモデル"""
 
-    uuid = models.UUIDField(default=uuid4, primary_key=True, editable=False)
-    email = models.EmailField(_('email address'), unique=True)
-    first_name = models.CharField(_('first name'), max_length=30, blank=True)
-    last_name = models.CharField(_('last name'), max_length=150, blank=True)
+    uuid = models.UUIDField(
+        default=uuid4,
+        primary_key=True,
+        editable=False
+    )
+    email = models.EmailField(
+        _('email address'),
+        unique=True
+    )
+    first_name = models.CharField(
+        _('first name'),
+        max_length=30,
+        blank=True
+    )
+    last_name = models.CharField(
+        _('last name'),
+        max_length=150,
+        blank=True
+    )
 
     is_staff = models.BooleanField(
         _('is staff'),
@@ -61,7 +76,41 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         default=True,
         help_text=_('Designates whether the user should be treated as active.\nUnselect this instead of deleting accounts.')
     )
-    date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
+    date_joined = models.DateTimeField(
+        _('date joined'),
+        default=timezone.now
+    )
+    a_factor = models.IntegerField(
+        _('a factor'),
+        blank=True,
+        null=True,
+    )
+    b_factor = models.IntegerField(
+        _('b factor'),
+        blank=True,
+        null=True,
+    )
+    c_factor = models.IntegerField(
+        _('c factor'),
+        blank=True,
+        null=True,
+    )
+    d_factor = models.IntegerField(
+        _('d factor'),
+        blank=True,
+        null=True,
+    )
+    e_factor = models.IntegerField(
+        _('e factor'),
+        blank=True,
+        null=True,
+    )
+    ffs_type = models.CharField(
+        _('ffs type'),
+        max_length=5,
+        blank=True,
+        null=True,
+    )
 
     objects = CustomUserManager()
 
@@ -74,14 +123,23 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = _('users')
 
     def get_full_name(self):
-        full_name = '{} {}'.format(self.first_name, self.last_name)
+        full_name = '{} {}'.format(
+            self.first_name,
+            self.last_name
+        )
         return full_name.strip()
 
     def get_short_name(self):
         return self.first_name
 
     def email_user(self, subject, message, from_email=None, **kwargs):
-        send_mail(subject, message, from_email, [self.email], **kwargs)
+        send_mail(
+            subject,
+            message,
+            from_email,
+            [self.email],
+            **kwargs
+        )
 
     @property
     def username(self):
