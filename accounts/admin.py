@@ -2,18 +2,19 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.utils.translation import ugettext as _
+from django.contrib.auth import get_user_model
 from .models import CustomUser
 
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
-        model = CustomUser
+        model = get_user_model()
         fields = '__all__'
 
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
-        model = CustomUser
+        model = get_user_model()
         fields = ('email',)
 
 
@@ -21,6 +22,7 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name')}),
+        (_('FFS info'), {'fields': ('a_factor', 'b_factor', 'c_factor', 'd_factor', 'e_factor', 'ffs_type')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
