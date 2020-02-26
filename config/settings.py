@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'dof.apps.DofConfig',
 ]
 
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -124,3 +126,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+try:
+    from config.local_settings import *
+except ImportError:
+    pass
