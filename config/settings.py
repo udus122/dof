@@ -41,10 +41,11 @@ INSTALLED_APPS = [
     # 3rd party apps
     'allauth',
     'allauth.account',
-
+    'allauth.socialaccount',
     # my apps
     'accounts.apps.AccountsConfig',
     'dof.apps.DofConfig',
+
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -126,7 +127,12 @@ USE_L10N = True
 USE_TZ = True
 
 # django-allauth用
-SIDE_ID = 1
+SITE_ID = 1
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
 
 LOGIN_REDIRECT_URL = 'index'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
