@@ -37,7 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    # 3rd party apps
+    'allauth',
+    'allauth.account',
 
+    # my apps
     'accounts.apps.AccountsConfig',
     'dof.apps.DofConfig',
 ]
@@ -119,6 +124,12 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# django-allauth用
+SIDE_ID = 1
+
+LOGIN_REDIRECT_URL = 'index'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 
 # Static files (CSS, JavaScript, Images)
