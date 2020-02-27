@@ -21,4 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('accounts/', include('allauth.urls')),
+    path('accounts/login/', TemplateView.as_view(template_name='login.html'), name='login'),
+    path('accounts/logout/', TemplateView.as_view(template_name='logout.html'), name='logout'),
+    path('accounts/signup/', TemplateView.as_view(template_name='signup.html'), name='signup'),
 ]
