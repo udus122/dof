@@ -1,0 +1,180 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.posr {
+  position: relative;
+}
+.gd {
+  background: -moz-linear-gradient(right, #ffc778, #fff);
+  background: -webkit-linear-gradient(right, #ffc778, #fff);
+  background: linear-gradient(to left, #ffbb5d 50%, #fff);
+}
+
+.bd {
+  border: dashed 8px #ffbb5d !important;
+}
+
+.bg1 {
+  background: #f6f5f4 !important;
+}
+.bg2 {
+  background: #f5e6d6 !important;
+}
+
+.start {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left !important;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.submitButton {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.answerButton {
+  width: 100% !important;
+  height: 50px !important;
+  margin-bottom: 30px !important;
+}
+
+.toptitle {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  top: 300px;
+  left: 300px;
+}
+
+.subtitle {
+  position: absolute;
+  top: 350px;
+  left: 300px;
+  letter-spacing: 2px;
+}
+
+.main {
+  background: #f3e9de;
+  width: 100%;
+  height: 770px;
+  margin: 0 auto;
+}
+
+.mr5 {
+  margin-right: 20px !important;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
+.mt80 {
+  margin-top: 80px;
+}
+
+.mt100 {
+  margin-top: 100px;
+}
+.mb10 {
+  margin-bottom: 10px !important;
+}
+
+.mb30 {
+  margin-bottom: 30px !important;
+}
+
+.mb50 {
+  margin-bottom: 50px !important;
+}
+
+.ml200 {
+  margin-left: 200px;
+}
+.p10 {
+  padding: 10px !important;
+}
+
+.p25 {
+  padding: 25px !important;
+}
+
+.p50 {
+  padding: 50px !important;
+}
+
+.p80 {
+  padding: 80px !important;
+}
+
+.h100 {
+  height: 100% !important;
+}
+
+.w30 {
+  width: 30% !important;
+}
+
+.w50 {
+  width: 50% !important;
+}
+
+.w100 {
+  width: 100% !important;
+}
+
+.ft50 {
+  font-size: 50px !important;
+}
+
+/* 依存 */
+.headTitle {
+  margin-bottom: 50px !important;
+}
+
+.formTitle {
+  font-size: 14px !important;
+}
+
+.formTitleSentence {
+  font-size: 14px !important;
+}
+
+.containerSizeNarrow {
+  margin-top: 40px !important;
+  width: 30% !important;
+}
+
+.containerSizeWide {
+  margin-top: 40px !important;
+  width: 50% !important;
+}
+
+.segmentSize {
+  padding: 50px !important;
+}
