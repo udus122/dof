@@ -8,7 +8,7 @@
 
   <div class="ui segment segmentSize">
 
-    <form class="ui form" method="post" action ="">
+    <form class="ui form" method="post" action="{% url 'account_login' %}">
        {% csrf_token %}
       <div class="field">
         <label class="formTitle">{% trans "Email" %}</label>

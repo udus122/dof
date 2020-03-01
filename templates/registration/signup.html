@@ -8,7 +8,8 @@
   <div class="headTitle"><h1>{% trans "Signup" %}</h1></div>
 
   <div class="ui segment segmentSize">
-    <form class="ui form" method="post" action="">
+    
+    <form class="ui form" method="post" action="{% url 'account_signup' %}">
       {% csrf_token %}
       <div class="field">
         <label class="formTitle">{% trans "Username" %}</label>
