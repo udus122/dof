@@ -1,0 +1,54 @@
+{% extends "base.html" %} 
+
+{% block page_title %}{% trans "Signup" %}{% endblock %} 
+
+{% block content %}
+<div class="ui container containerSizeNarrow">
+
+  <div class="headTitle"><h1>{% trans "Signup" %}</h1></div>
+
+  <div class="ui segment segmentSize">
+    <form class="ui form" method="post" action="">
+      {% csrf_token %}
+      <div class="field">
+        <label class="formTitle">{% trans "Username" %}</label>
+        <input type="text" name="username" placeholder="UserName" autofocus />
+      </div>
+
+      <div class="field">
+        <label class="formTitle">{% trans "Email" %}</label>
+        <input type="email" name="email" placeholder="Email" />
+      </div>
+
+      <div class="field">
+        <label class="formTitle">{% trans "Password" %}</label>
+        <input type="password" name="password" placeholder="Password" />
+      </div>
+
+      <div class="field">
+        <label class="formTitle">{% trans "Password (confirm)" %}</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password(confirm)"
+        />
+      </div>
+
+      <div class="field">
+        <div class="ui checkbox mt40">
+          <input type="checkbox" tabindex="0" class="hidden" />
+          <label>{% blocktrans %}I agree to the Terms and Conditions{% endblocktrans%}</label>
+        </div>
+      </div>
+
+      <div class="submitButton">
+        <button class="ui orange button " type="submit">
+          {% trans "Signup" %}
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+{% endblock %}
