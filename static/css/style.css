@@ -47,34 +47,6 @@ body {
   text-align: center;
 }
 
-.submitButton {
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.answerButton {
-  width: 100% !important;
-  height: 50px !important;
-  margin-bottom: 30px !important;
-}
-
-.toptitle {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 50px;
-  position: absolute;
-  top: 300px;
-  left: 300px;
-}
-
-.subtitle {
-  position: absolute;
-  top: 350px;
-  left: 300px;
-  letter-spacing: 2px;
-}
-
 .main {
   background: #f3e9de;
   width: 100%;
@@ -153,6 +125,35 @@ body {
 }
 
 /* 依存 */
+
+.submitButton {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.answerButton {
+  width: 100% !important;
+  height: 50px !important;
+  margin-bottom: 30px !important;
+}
+
+.toptitle {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  top: 300px;
+  left: 300px;
+}
+
+.subtitle {
+  position: absolute;
+  top: 350px;
+  left: 300px;
+  letter-spacing: 2px;
+}
+
 .headTitle {
   margin-bottom: 50px !important;
 }
