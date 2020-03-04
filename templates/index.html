@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{% block page_title %}DOF　toppage{% endblock %}</title>
+    {% load i18n %}
+    <title>{% block page_title %}{% trans "Top page" %}{% endblock %}</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -15,19 +16,52 @@
     {% block extra_css %}{% endblock %}
   </head>
   <body>
-    <div class="ui container">
-      {% block contetnt %}
-        
-          <h1 class="ft30">DOFのtoppageです。</h1>
-        
 
-        <footer class="footer">
-          <div class="ui center bg1 p10 "><p>CopyRight&copyYDYT</p></div>
-        </footer>
+{% block contetnt %}
+{% load i18n %}
       
-      
-      {% endblock %}
+   <img src="../../static/images/cover.png" class='headimg' />
+    <div class="ui right">
+      <a class="ui item yellow inverted button titleSignup" href='/signup'>{% trans "Sign Up" %}</a>
+      <a class="ui item orange inverted button titleLogin" href='/login'>{% trans "Log in" %}</a>
+      <div class="title">
+        <h1 class='topTitle'>DOF</h1>
+        <h4 class='subTitle'>Diagnosis　Of　FFS</h4>
+      </div>
     </div>
+
+    <div class="headOverview">
+      <h1 class='indexHeadTitle'>概要</h1>
+      <p class='indexHeadSentence'>
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+      </p>
+    </div>
+
+    <div class="headFlow">
+      <h1 class='indexHeadTitle'>ご利用の流れ</h1>
+      <p class='indexHeadSentence'>
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+        テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+      </p>
+        <div class='goSignup mt100'>
+          <h1>アカウント登録をして始める</h1>
+          <div class='mt20 ml50'>
+            <a class="ui item yellow inverted button" href='/signup'>{% trans "Sign Up" %}</a>
+          </div>
+        </div>
+    </div>
+
+      
+
+{% endblock %}
+    
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
