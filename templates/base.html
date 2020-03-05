@@ -6,30 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{% block page_title %}DOF{% endblock %}</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="../static/css/semantic.min.css"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     {% block extra_css %}{% endblock %}
   </head>
   <body>
-    
-      {% block main %}
-        <div class="ui black header p25 posr gd">
-          <h1 class="ft30">DOF</h1>
-        </div>
+    <div id='container'>
+        {% block main %}
+          <div class="ui black header p25 posr gd">
+            <h1 class="ft30"><a href='/' class='toTopLink'>DOF</a></h1>
+          </div>
+        {% endblock%}
 
-        <footer class="footer">
-          <div class="ui center bg1 p10 "><p>CopyRight&copyYDYT</p></div>
-        </footer>
-      {% endblock %}
-
-      {% block content %}
-      {% endblock %}
-    
-
+        
+      <div id='main'>
+        {% block content %}
+        {% endblock %}
+      </div>
+      
+        {% block footer %}
+          <footer class="">
+            <div class="center"><p>CopyRight&copyYDYT</p></div>
+          </footer>
+        {% endblock %}
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

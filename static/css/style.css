@@ -1,16 +1,39 @@
+html,
 body {
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 
-.footer {
+#container {
+  position: relative;
+  min-height: 100%;
+}
+
+#main {
+  padding-bottom: 150px;
+}
+
+footer {
+  background-color: rgb(238, 231, 231);
   width: 100%;
+  height: 30px;
   position: absolute;
   bottom: 0;
 }
-.posr {
-  position: relative;
+
+a {
+  text-decoration: none;
 }
+
+.toTopLink:link {
+  color: black !important;
+}
+
+.toTopLink:visited {
+  color: black !important;
+}
+
 .gd {
   background: -moz-linear-gradient(right, #ffc778, #fff);
   background: -webkit-linear-gradient(right, #ffc778, #fff);
@@ -19,6 +42,10 @@ body {
 
 .orange {
   color: orange;
+}
+
+.colw {
+  color: white;
 }
 
 .bd {
@@ -67,19 +94,19 @@ body {
 }
 
 .mt20 {
-  margin-top: 20px;
+  margin-top: 20px !important;
 }
 
 .mt40 {
-  margin-top: 40px;
+  margin-top: 40px !important;
 }
 
 .mt80 {
-  margin-top: 80px;
+  margin-top: 80px !important;
 }
 
 .mt100 {
-  margin-top: 100px;
+  margin-top: 100px !important;
 }
 .mb10 {
   margin-bottom: 10px !important;
@@ -94,7 +121,7 @@ body {
 }
 
 .ml40 {
-  margin-left: 40px;
+  margin-left: 40px !important;
 }
 
 .ml50 {
@@ -102,7 +129,7 @@ body {
 }
 
 .ml200 {
-  margin-left: 200px;
+  margin-left: 200px !important;
 }
 .p10 {
   padding: 10px !important;
@@ -144,7 +171,7 @@ body {
   font-size: 50px !important;
 }
 
-/* 依存 */
+/* unique */
 
 .submitButton {
   margin: 0 auto;
@@ -246,7 +273,7 @@ body {
 .headOverview {
   height: 770px;
   width: 100%;
-  background: #dbd5cf;
+  background: rgb(245, 176, 86);
   position: relative;
   top: 1px;
 }
@@ -254,19 +281,21 @@ body {
   position: absolute;
   top: 15%;
   left: 30%;
+  color: white;
 }
 .indexHeadSentence {
   position: absolute;
   top: 30%;
   left: 30%;
   line-height: 3em;
+  color: white;
 }
 
 /* ご利用の流れ */
 .headFlow {
   height: 850px;
   width: 100%;
-  background: #989dc9;
+  background: #2b303f;
   position: absolute;
 }
 

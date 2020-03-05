@@ -7,11 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     {% load i18n %}
     <title>{% block page_title %}{% trans "Top page" %}{% endblock %}</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="../static/css/semantic.min.css"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     {% block extra_css %}{% endblock %}
   </head>
@@ -51,14 +47,12 @@
         テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
       </p>
         <div class='goSignup mt100'>
-          <h1>アカウント登録をして始める</h1>
+          <h1 class='colw'>ユーザー登録をして始める</h1>
           <div class='mt20 ml50'>
             <a class="ui item yellow inverted button" href='/signup'>{% trans "Sign Up" %}</a>
           </div>
         </div>
     </div>
-
-      
 
 {% endblock %}
     

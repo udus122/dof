@@ -1,8 +1,88 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 {% block page_title %}{% trans "Mypage" %}{% endblock %}
 
 {% block content %}
-<h1>これはマイページです。</h1>
+{% load i18n %}
 
+{% comment %} 診断未済 {% endcomment %}
+<div class="ui container containerSizeWide">
+      <div class="center">
+        <button class="ui orange inverted button w30 h50 mt100">{% trans "Start!" %}</button>
+      </div>
+      <div class="ui segment segmentSize mt150">
+        <h2 class='center'>{% trans "Overview" %}</h2>
+          <div class="mt20">
+            <p>文字が入ります文字が入ります文字が入ります文字が入ります<br>
+                文字が入ります文字が入ります文字が入ります文字が入ります<br>
+                文字が入ります文字が入ります文字が入ります文字が入ります<br>
+                文字が入ります文字が入ります文字が入ります文字が入ります<br>
+                文字が入ります文字が入ります文字が入ります文字が入ります文字が入ります</p>
+          </div>
+      </div>
+</div>
+
+{% comment %} 診断済 {% endcomment %}
+<div class="ui container containerSizeWide">
+    <div class="headTitle"><h1>{% trans "Result of Diagnosis" %}</h1></div>
+    <div class="ui cards">
+      <div class="card w100">
+        <div class="content">
+          <div class="header ">思考の順番</div>
+          <div class="description">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </div>
+        </div>
+      </div>
+      <div class="card w100">
+        <div class="content">
+          <div class="header">個人特性傾向グラフ</div>
+          <div class="description">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </div>
+        </div>
+      </div>
+      <div class="card w100">
+        <div class="content">
+          <div class="header">タイプ（因子の並び順）</div>
+          <div class="description">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </div>
+        </div>
+      </div>
+      <div class="card w100">
+        <div class="content">
+          <div class="header">強み</div>
+          <div class="description">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </div>
+        </div>
+      </div>
+      <div class="card w100">
+        <div class="content">
+          <div class="header">ストレス要因</div>
+          <div class="description">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </div>
+        </div>
+      </div>
+      <div class="card w100">
+        <div class="content">
+          <div class="header">弱み</div>
+          <div class="description">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </div>
+        </div>
+      </div>
+      <div class="card ">
+        <div class="content">
+          <div class="header">アドバイス</div>
+          <div class="description">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </div>
+        </div>
+      </div>
+   </div>
+</div>
 {% endblock %}
