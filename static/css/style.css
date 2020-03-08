@@ -247,10 +247,17 @@ a {
 }
 
 .headimg {
-  background-size: cover !important;
-  width: 100% !important;
-  height: 100% !important;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
   position: relative;
+}
+
+.pc {
+  display: block !important;
+}
+.sp {
+  display: none !important;
 }
 
 .topTitle {
@@ -318,6 +325,13 @@ a {
   }
 
   /* トップページ */
+  .pc {
+    display: none !important;
+  }
+  .sp {
+    display: block !important;
+  }
+
   .titleSignup {
     position: absolute !important;
     top: 5% !important;
