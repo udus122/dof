@@ -15,15 +15,31 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path, re_path
 from django.views.generic import TemplateView
-from accounts import views
+from accounts import account_views
+from dof import dof_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    path('accounts/', include('allauth.urls')),
-    path('login/', views.login_view, name='login'),
-    path('logout/', views.logout_view, name='logout'),
-    path('signup/', views.signup_view, name='signup'),
+    path('login/', account_views.login_view, name='account_login'),
+    path('logout/', account_views.logout_view, name='account_logout'),
+    path('signup/', account_views.signup_view, name='account_signup'),
+    path(
+        'password/reset/',
+        account_views.password_reset_view,
+        name='account_reset_password'
+    ),
+    path(
+        'password/reset/done/',
+        account_views.password_reset_done_view,
+        name='account_reset_password_done'
+    ),
+    re_path(
+        r"^password/reset/key/(?P<uidb36>[0-9A-Za-z]+)-(?P<key>.+)/$",
+        account_views.password_reset_from_key_view,
+        name="account_reset_password_from_key"
+    ),
+    path('password/reset/key/done/', account_views.password_reset_from_key_done_view, name='account_reset_password_from_key_done'),
 ]

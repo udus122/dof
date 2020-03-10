@@ -43,7 +43,7 @@ password_reset_view = PasswordResetView.as_view()
 
 class PasswordResetDoneView(auth_view.PasswordResetDoneView):
     """
-    パスワードリセットビュー
+    パスワードリセット完了ビュー
     """
     template_name = 'password_reset_done.html'
 
