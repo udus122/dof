@@ -17,8 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from django.views.generic import TemplateView
-from accounts import account_views
-from dof import dof_views
+from accounts import views as account_views
+from dof import views as dof_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
