@@ -42,4 +42,6 @@ urlpatterns = [
         name="account_reset_password_from_key"
     ),
     path('password/reset/key/done/', account_views.password_reset_from_key_done_view, name='account_reset_password_from_key_done'),
+    path('mypage/', dof_views.mypage_view, name='mypage'),
+    path('diagnosis/', dof_views.diagnosis_view, name='diagnosis'),
 ]
