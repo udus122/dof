@@ -130,3 +130,6 @@ dmypy.json
 
 # vscode
 .vscode/
+
+# gcp api key
+diagnosisiofffs-270807-2272f91cd9df.json
