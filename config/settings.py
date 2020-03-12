@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')%s08z7*gzj^mc(ejk6nz=c&y^rji$q^osl9o$7j15j^z*xah!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -195,8 +195,3 @@ EMAIL_USE_TLS = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-try:
-    from config.local_settings import *
-except ImportError:
-    pass
