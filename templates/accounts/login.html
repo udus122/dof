@@ -5,39 +5,23 @@
 
 {% block content %}
 <div class="ui container containerSizeNarrow">
-    {% load i18n %}
+    <!-- {% load i18n %} -->
     <div class="headTitle"><h1>{% trans "Sign In" %}</h1></div>
 
   <div class="ui segment segmentSize">
 
-    <form class="ui form" method="post" action ="">
+    <form class="ui form" method="post" action ="{% url 'account_login' %}">
        {% csrf_token %}
       <div class="field">
-        <label class="formTitle">{% trans "Email" %}</label>
-        <input type="email" name="email" placeholder="{% trans 'Email' %}" autofocus />
+        {{ form }}
       </div>
-
-      <div class="field">
-        <label class="formTitle">{% trans "Password" %}</label>
-        <input type="password" name="password" placeholder="{% trans 'Password' %}" />
-      </div>
-
-      <div class="field">
-        <div class="ui checkbox mt40">
-            <input type="checkbox" tabindex="0"/>
-            <label>{% blocktrans %}I agree to the Terms and Conditions{% endblocktrans %}</label>
-        </div>
-      </div>
-
-      <a href="#">{% trans "Forgot Password?" %}</a>
+      <a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
       <div class="submitButton">
         <button class="ui orange button" type="submit">
             {% trans "Sign In" %}
         </button>
       </div>
-
     </form>
   </div>
-
 </div>
 {% endblock %}
