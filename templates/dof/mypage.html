@@ -6,10 +6,11 @@
 {% block content %}
 {% load i18n %}
 
-{% comment %} 診断未済 {% endcomment %}
+{% if not user.ffs_type %}
 <div class="ui container containerSizeWide">
       <div class="center">
-        <button class="ui orange inverted button w30 h50 mt100">{% trans "Start!" %}</button>
+        <h1>{{ user.email }}さん</h1>
+        <a class="ui orange inverted button w30 h50 mt100" href="{% url 'diagnosis' %}">{% trans "Start!" %}</a>
       </div>
       <div class="ui segment segmentSize mt150">
         <h2 class='center'>{% trans "Overview" %}</h2>
@@ -23,7 +24,7 @@
       </div>
 </div>
 
-{% comment %} 診断済 {% endcomment %}
+{% else %}
 <div class="ui container containerSizeWide">
     <div class="headTitle"><h1>{% trans "Result of Diagnosis" %}</h1></div>
     <div class="ui cards">
@@ -83,6 +84,7 @@
           </div>
         </div>
       </div>
-   </div>
+    </div>
 </div>
+{% endif %}
 {% endblock %}
