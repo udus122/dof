@@ -1,7 +1,9 @@
-from django.views.generic.base import TemplateView
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView
 
 
-class mypageView(TemplateView):
+class mypageView(LoginRequiredMixin, TemplateView):
     """mypage View"""
     template_name = 'mypage.html'
 
