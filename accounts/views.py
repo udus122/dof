@@ -15,7 +15,7 @@ class LogoutView(auth_view.LogoutView):
     """
     ログアウトビュー
     """
-    # template_name = 'logout.html'
+    template_name = 'logout.html'
 
 
 logout_view = LogoutView.as_view()
