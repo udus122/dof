@@ -59,6 +59,10 @@ a {
   background: #f5e6d6 !important;
 }
 
+.bg3 {
+  background: orange !important;
+}
+
 .start {
   position: absolute;
   top: 20px;
@@ -163,6 +167,10 @@ a {
   width: 100% !important;
 }
 
+.ft15 {
+  font-size: 15px !important;
+}
+
 .ft20 {
   font-size: 20px !important;
 }
@@ -231,6 +239,17 @@ a {
   height: 770px;
   width: 100%;
   background: #f6f5f4;
+}
+
+/* mypage */
+
+.description {
+  margin-top: 20px !important;
+  text-align: center !important;
+}
+
+.content {
+  padding: 25px !important;
 }
 
 /* index.html */
@@ -312,6 +331,12 @@ a {
   left: 30%;
 }
 
+#myChart {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 500px) {
   /* 回答ボタン用 */
   .items {
@@ -355,4 +380,20 @@ a {
     top: 65% !important;
     left: 20% !important;
   }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table th,
+table td {
+  padding: 10px 0;
+  text-align: center;
+}
+
+table tr:nth-child(odd) {
+  background-color: #eee;
 }
