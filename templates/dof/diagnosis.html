@@ -6,22 +6,31 @@
 
 {% block content %}
 <div class="ui container containerSizeWide">
-{% load i18n %}
+<!-- {% load i18n %} -->
   <div class="headTitle"><h1>{% trans "Question" %}</h1></div>
   <div class="ui segment p80">
-    <form class="ui form">
+
       <div class="field">
-        <p>
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        </p>
+        <h2>{{ qn }}</h2>
+        <p>{{ object.sentence }}</p>
+        <p>{{ result }}</p>
       </div>
-    </form>
   </div>
-  <div class="items">
-    <button class="ui orange inverted button item">はい</button>
-    <button class="ui orange inverted button item">どちらでもない</button>
-    <button class="ui orange inverted button item">いいえ</button>
-  </div>
+  <form class="ui form" method="POST" action="{% url 'diagnosis' qn=next_qn %}">
+    {% csrf_token %}
+    <div class="items">
+      {{ form.A.as_hidden }}
+      {{ form.B.as_hidden }}
+      {{ form.C.as_hidden }}
+      {{ form.D.as_hidden }}
+      {{ form.E.as_hidden }}
+      <input type="hidden" name="factor" value="{{ object.factor }}">
+
+      <button class="ui orange inverted button item" name="answer" value="2">はい</button>
+      <button class="ui orange inverted button item" name="answer" value="1">どちらでもない</button>
+      <button class="ui orange inverted button item" name="answer" value="0">いいえ</button>
+    </div>
+</form>
 </div>
 
 {% endblock %}

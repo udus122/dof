@@ -1,0 +1,410 @@
+[
+    {
+        "model": "dof.diagnosis",
+        "pk": 1,
+        "fields": {
+            "factor": "A",
+            "sentence": "時間の約束には特に厳しい"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 2,
+        "fields": {
+            "factor": "A",
+            "sentence": "小さな不正でもウヤムヤにできない"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 3,
+        "fields": {
+            "factor": "A",
+            "sentence": "理想の実現のため、着実な努力をしている"
+            }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 4,
+        "fields": {
+            "factor": "A",
+            "sentence": "他人の言葉をさえぎっても自分の考えを述べる傾向がある"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 5,
+        "fields": {
+            "factor": "A",
+            "sentence": "後輩など目下の者を厳しく教育する"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 6,
+        "fields": {
+            "factor": "A",
+            "sentence": "他人に対して責任感を強く要求する"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 7,
+        "fields": {
+            "factor": "A",
+            "sentence": "他人のミスを厳しく追求、批判することが多い"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 8,
+        "fields": {
+            "factor": "A",
+            "sentence": "権利の主張は、義務を果たした後だと考える"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 9,
+        "fields": {
+            "factor": "A",
+            "sentence": "「こうでなければならない」「こうすべきだ」という表現をよく使う"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 10,
+        "fields": {
+            "factor": "A",
+            "sentence": "規則、道徳、倫理などは、自分の考えより重視する"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 11,
+        "fields": {
+            "factor": "B",
+            "sentence": "他人に対する思いやりは強い"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 12,
+        "fields": {
+            "factor": "B",
+            "sentence": "相手の話に影響を受け、共感しやすい"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 13,
+        "fields": {
+                "factor": "B",
+                "sentence": "何事にも臨機応変に対応できる"
+            }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 14,
+        "fields": {
+            "factor": "B",
+            "sentence": "他人の長所を見つけるのは得意"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 15,
+        "fields": {
+            "factor": "B",
+            "sentence": "掃除、洗濯、整理整頓が好き"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 16,
+        "fields": {
+            "factor": "B",
+            "sentence": "子供や他人の世話をするのが好き"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 17,
+        "fields": {
+            "factor": "B",
+            "sentence": "義理や人情といった感情を重視する"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 18,
+        "fields": {
+            "factor": "B",
+            "sentence": "ボランティアに参加するのが好き"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 19,
+        "fields": {
+            "factor": "B",
+            "sentence": "都合の悪い頼まれ事でも、なかなか「いや」といえない"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 20,
+        "fields": {
+            "factor": "B",
+            "sentence": "目下の者の失敗には寛大である"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 21,
+        "fields": {
+            "factor": "C",
+            "sentence": "感情的な会話は少ない"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 22,
+        "fields": {
+            "factor": "C",
+            "sentence": "将来のことを冷静に予測し、合理的と思う方法で行動している"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 23,
+        "fields": {
+            "factor": "C",
+            "sentence": "調子の悪いときは大事をとって決して無理をしない"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 24,
+        "fields": {
+            "factor": "C",
+            "sentence": "賛否両論をよく聞き自分の意見の参考にしている"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 25,
+        "fields": {
+            "factor": "C",
+            "sentence": "物事の決断はスピーディーである"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 26,
+        "fields": {
+            "factor": "C",
+            "sentence": "行動に際し、自分の損得が優先する"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 27,
+        "fields": {
+            "factor": "C",
+            "sentence": "物事は分析的によく考えてからハッキリ決める"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 28,
+        "fields": {
+            "factor": "C",
+            "sentence": "仕事は能率的に素早く片づけている"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 29,
+        "fields": {
+            "factor": "C",
+            "sentence": "何事も「意見ではなく事実」に基づいて判断している"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 30,
+        "fields": {
+            "factor": "C",
+            "sentence": "情緒的というより論理的である"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 31,
+        "fields": {
+            "factor": "D",
+            "sentence": "欲しいものはすぐに手に入れないと、気がすまない"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 32,
+        "fields": {
+            "factor": "D",
+            "sentence": "感動しやすく涙もろい"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 33,
+        "fields": {
+            "factor": "D",
+            "sentence": "娯楽・飲食などは、満足するまで求める傾向がある"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 34,
+        "fields": {
+            "factor": "D",
+            "sentence": "深く考えるというより、直感で判断することが多い"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 35,
+        "fields": {
+            "factor": "D",
+            "sentence": "燃えやすく、冷めやすい"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 36,
+        "fields": {
+            "factor": "D",
+            "sentence": "オーバーな表現や、流行語をよく使う"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 37,
+        "fields": {
+            "factor": "D",
+            "sentence": "思った事は、すぐ口に出してしまう"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 38,
+        "fields": {
+            "factor": "D",
+            "sentence": "怒りっぽい"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 39,
+        "fields": {
+            "factor": "D",
+            "sentence": "自分はワガママだと思う"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 40,
+        "fields": {
+            "factor": "D",
+            "sentence": "図に乗るとハメをはずし、度を越すこともある"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 41,
+        "fields": {
+            "factor": "E",
+            "sentence": "争ってまで自分の考えを通すのきらい"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 42,
+        "fields": {
+            "factor": "E",
+            "sentence": "思っていることをなかなか口に出せないことがある"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 43,
+        "fields": {
+            "factor": "E",
+            "sentence": "他人の言葉や行動が気になる"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 44,
+        "fields": {
+            "factor": "E",
+            "sentence": "少数派になるより、多数派でいることのほうが好き"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 45,
+        "fields": {
+            "factor": "E",
+            "sentence": "遠慮がちで消極的な方である"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 46,
+        "fields": {
+            "factor": "E",
+            "sentence": "八方美人的なところが多い"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 47,
+        "fields": {
+            "factor": "E",
+            "sentence": "つらい時は、動くよりじっとガマンしてしまう"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 48,
+        "fields": {
+            "factor": "E",
+            "sentence": "他人の期待に応えるため、過剰な努力をすることがある"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 49,
+        "fields": {
+            "factor": "E",
+            "sentence": "劣等感を強く感じることがある"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 50,
+        "fields": {
+            "factor": "E",
+            "sentence": "人前では、感情をおさえてしまうことが多い"
+        }
+    },
+    {
+        "model": "dof.diagnosis",
+        "pk": 51,
+        "fields": {
+            "factor": "END",
+            "sentence": ""
+        }
+    }
+]

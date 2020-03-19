@@ -10,14 +10,14 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="../static/css/semantic.min.css"
+      href="{% static 'css/semantic.min.css' %}"
     />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     {% block extra_css %}{% endblock %}
   </head>
   <body>
     {% block contetnt %} {% load i18n %}
-    <img src="../../static/images/cover.png" class="headimg" />
+    <img src=".{% static 'images/cover.png' %}" class="headimg" />
     <div class="ui right">
       <a class="ui item yellow inverted button titleSignup" href="/signup"
         >{% trans "Sign Up" %}</a
