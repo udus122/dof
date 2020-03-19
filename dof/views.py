@@ -61,6 +61,9 @@ class DiagnosisView(LoginRequiredMixin, TemplateView):
                 login_user.e_factor
             )
             login_user.save()
+            # ffs_type(91type)の分類
+            login_user.ffs_type = login_user.get_ffs_type()
+            login_user.save()
 
             return redirect('mypage', permanent=True)
 

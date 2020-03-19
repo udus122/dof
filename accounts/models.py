@@ -7,6 +7,7 @@ from django.db import models
 
 
 from uuid import uuid4
+from operator import itemgetter
 
 
 class CustomUserManager(UserManager):
@@ -145,6 +146,54 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def username(self):
         """
         username属性のゲッター
-        他のアプリケーションが、username属性にアクセスしたバアに備えて定義メールアドレスを返す
+        他のアプリケーションが、username属性にアクセスした場合に備えて定義メールアドレスを返す
         """
         return self.email
+
+    def get_ffs_type(self):
+        """
+            診断結果の数字に基づいて、因子を91タイプに分類する
+            -----------
+            description
+            -----------
+            5因子系 : 1st - 5th <= 1 (1)
+            4因子系 : 1st - 4th <= 1 (5)
+            3因子系 : 1st - 3rd <= 4 (60)
+            2因子系 : 1st - 2nd <= 4 (20)
+            1因子系 : 1st - 2nd >= 5 (5)
+            因子の数値が等しいの場合、E > D > C > A > B とする
+
+            -------
+            returns
+            -------
+            ffs_type : str
+                FFS診断の結果(91タイプ分類)
+        """
+        def get_type(sorted_result, n_of_factors):
+            factor_list = [x[0] for x in sorted_result]
+            factors = ''.join(factor_list)
+            ffs_type = factors[:n_of_factors]
+            return ffs_type
+
+        diagnosis_result = [
+            ('A', int(self.a_factor), 1),
+            ('B', int(self.b_factor), 0),
+            ('C', int(self.c_factor), 2),
+            ('D', int(self.d_factor), 3),
+            ('E', int(self.e_factor), 4),
+        ]
+
+        sorted_result = sorted(diagnosis_result, key=itemgetter(1, 2), reverse=True)
+
+        if sorted_result[0][1] - sorted_result[4][1] <= 1:
+            return get_type(sorted_result, 5)
+        elif sorted_result[0][1] - sorted_result[3][1] <= 1:
+            return get_type(sorted_result, 4)
+        elif sorted_result[0][1] - sorted_result[2][1] <= 4:
+            return get_type(sorted_result, 3)
+        elif sorted_result[0][1] - sorted_result[1][1] <= 4:
+            return get_type(sorted_result, 2)
+        elif sorted_result[0][1] - sorted_result[1][1] >= 5:
+            return get_type(sorted_result, 1)
+        else:
+            return None
