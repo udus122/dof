@@ -4,7 +4,7 @@
 {% block page_title %}{% trans "Mypage" %}{% endblock %}
 
 {% block content %}
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 {% if not user.ffs_type %}
 <div class="ui container containerSizeWide">
       <div class="center">
@@ -14,76 +14,130 @@
       <div class="ui segment segmentSize mt150">
         <h2 class='center'>{% trans "Overview" %}</h2>
           <div class="mt20">
-            <p>文字が入ります文字が入ります文字が入ります文字が入ります<br>
-                文字が入ります文字が入ります文字が入ります文字が入ります<br>
-                文字が入ります文字が入ります文字が入ります文字が入ります<br>
-                文字が入ります文字が入ります文字が入ります文字が入ります<br>
-                文字が入ります文字が入ります文字が入ります文字が入ります文字が入ります</p>
+            <p>FFS（Five Factors & Stress）理論とは、「ストレスと性格」の研究において開発されたものです。人が恣意的、無意識的に考え、行動するパターンを5因子で計量し、ストレス値においてポジティブな反応か、ネガティブな反応か分析します。その結果、その人が保有している潜在的な強みが客観的に分かります。</p>
+            <p><a href="http://human-logic.jp/about/">株式会社ヒューマンロジック研究所HPより</a></p>
           </div>
       </div>
 </div>
 
 {% else %}
 <div class="ui container containerSizeWide">
-    <div class="headTitle"><h1>{% trans "Result of Diagnosis" %}</h1></div>
-    <div class="ui cards">
-      <div class="card w100">
-        <div class="content">
-          <div class="header ">思考の順番</div>
-          <div class="description">
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          </div>
-        </div>
-      </div>
-      <div class="card w100">
-        <div class="content">
-          <div class="header">個人特性傾向グラフ</div>
-          <div class="description">
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          </div>
-        </div>
-      </div>
-      <div class="card w100">
-        <div class="content">
-          <div class="header">タイプ（因子の並び順）</div>
-          <div class="description">
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          </div>
-        </div>
-      </div>
-      <div class="card w100">
-        <div class="content">
-          <div class="header">強み</div>
-          <div class="description">
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          </div>
-        </div>
-      </div>
-      <div class="card w100">
-        <div class="content">
-          <div class="header">ストレス要因</div>
-          <div class="description">
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          </div>
-        </div>
-      </div>
-      <div class="card w100">
-        <div class="content">
-          <div class="header">弱み</div>
-          <div class="description">
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          </div>
-        </div>
-      </div>
-      <div class="card ">
-        <div class="content">
-          <div class="header">アドバイス</div>
-          <div class="description">
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          </div>
+  <div class="headTitle"><h1>{% trans "Result of Diagnosis" %}</h1></div>
+  <div class="ui cards">
+    <div class="card w100">
+      <div class="content">
+        <div class="header"><span class='underLine'>思考の順番</span></div>
+        <div class="description">
+          {{ request.user.first_factor }} {{ request.user.a_factor }}
+          {{ request.user.second_factor }} {{ request.user.b_factor }}
+          {{ request.user.third_factor }} {{ request.user.c_factor }}
+          {{ request.user.fourth_factor }} {{ request.user.d_factor }}
+          {{ request.user.fifth_factor }} {{ request.user.e_factor }}
         </div>
       </div>
     </div>
+    <div class="card w100">
+      <div class="content">
+        <div class="header"><span class='underLine'>個人特性傾向グラフ</div>
+        <div class="description">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="card w100">
+      <div class="content">
+        <div class="header"><span class='underLine'>タイプ（因子の並び順）</span></div>
+        <div class="description">
+        {% comment %} 結果に応じて表示を変える {% endcomment %}
+          <div class='ui label red ft15'>凝縮性</div>
+          <div class='ui label blue ft15'>受容性</div>
+          <div class='ui label yellow ft15'>弁別性</div>
+          <div class='ui label green ft15'>拡散性</div>
+          <div class='ui label purple ft15'>保全性</div>
+        </div>
+      </div>
+    </div>
+    <div class="card w100">
+      <div class="content">
+        <div class="header"><span class='underLine'>強み</span></div>
+        <div class="description">
+          coming soon
+        </div>
+      </div>
+    </div>
+    <div class="card w100">
+      <div class="content">
+        <div class="header"><span class='underLine'>ストレス要因</span></div>
+        <div class="description">
+          coming soon
+        </div>
+      </div>
+    </div>
+    <div class="card w100">
+      <div class="content">
+        <div class="header"><span class='underLine'>弱み</span></div>
+        <div class="description">
+          coming soon
+        </div>
+      </div>
+    </div>
+    <div class="card w100">
+      <div class="content">
+        <div class="header"><span class='underLine'>アドバイス</span></div>
+        <div class="description">
+          coming soon
+        </div>
+      </div>
+    </div>
+
+    <div class='card w100'>
+      <div class='content'>
+        <div class='header'>FFS理論について</div>
+          <table border=''>
+              <tr>
+                <th></th>
+                <th>凝縮性</th>
+                <th>受容性</th>
+                <th>弁別性</th>
+                <th>拡散性</th>
+                <th>保全性</th>
+              </tr>
+              <tr>
+                <td>力の源泉</td>
+                <td>固定・強化する</td>
+                <td>無条件に受け入れる力</td>
+                <td>白黒はっきり分ける力</td>
+                <td>外部に向かって動いていく力</td>
+                <td>現状を維持改善していく力</td>
+              </tr>
+              <tr>
+                <td>判断軸</td>
+                <td>正しいか、正しくないか</td>
+                <td>よいか、悪いか</td>
+                <td>適合しているか、していないか</td>
+                <td>好きか、嫌いか</td>
+                <td>好きか、嫌いか</td>
+              </tr>
+              <tr>
+                <td>キーワード</td>
+                <td>正義、権威性、責任感、批判的</td>
+                <td>貢献、保護的、共感、愛情</td>
+                <td>都合いい、合理的、事実は、判別的</td>
+                <td>挑戦、奔放性、外向性、野心</td>
+                <td>安全、内向的、慎重、敏感</td>
+              </tr>
+              <tr>
+                <td>口癖</td>
+                <td>「でなければならない」「当然」</td>
+                <td>「なるほど」「そうか〜」</td>
+                <td>「合理的」「論理的には」</td>
+                <td>「とりあえず」「まあいいか」</td>
+                <td>「無難」「安全に」</td>
+              </tr>
+          </table>
+      </div>
+    </div>
+  </div>
 </div>
 {% endif %}
 {% endblock %}

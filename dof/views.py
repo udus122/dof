@@ -6,6 +6,8 @@ from django.contrib.auth import get_user_model
 from .models import Diagnosis
 from .forms import DiagnosisForm
 
+User = get_user_model()
+
 
 class MypageView(LoginRequiredMixin, TemplateView):
     """mypage View"""
@@ -47,7 +49,7 @@ class DiagnosisView(LoginRequiredMixin, TemplateView):
         """
         if form.is_valid():
             uuid = request.user.uuid
-            login_user = get_user_model().objects.get(uuid=uuid)
+            login_user = User.objects.get(uuid=uuid)
             login_user.a_factor = form.cleaned_data['A']
             login_user.b_factor = form.cleaned_data['B']
             login_user.c_factor = form.cleaned_data['C']

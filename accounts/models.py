@@ -150,6 +150,43 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         """
         return self.email
 
+    @property
+    def first_factor(self):
+        sorted_factor = self.get_sorted_factor()
+        return sorted_factor[0][0]
+
+    @property
+    def second_factor(self):
+        sorted_factor = self.get_sorted_factor()
+        return sorted_factor[1][0]
+
+    @property
+    def third_factor(self):
+        sorted_factor = self.get_sorted_factor()
+        return sorted_factor[2][0]
+
+    @property
+    def fourth_factor(self):
+        sorted_factor = self.get_sorted_factor()
+        return sorted_factor[3][0]
+
+    @property
+    def fifth_factor(self):
+        sorted_factor = self.get_sorted_factor()
+        return sorted_factor[4][0]
+
+    def get_sorted_factor(self):
+        diagnosis_result = [
+            ('A', int(self.a_factor), 1),
+            ('B', int(self.b_factor), 0),
+            ('C', int(self.c_factor), 2),
+            ('D', int(self.d_factor), 3),
+            ('E', int(self.e_factor), 4),
+        ]
+
+        sorted_result = sorted(diagnosis_result, key=itemgetter(1, 2), reverse=True)
+        return sorted_result
+
     def get_ffs_type(self):
         """
             診断結果の数字に基づいて、因子を91タイプに分類する
